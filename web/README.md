@@ -1,6 +1,6 @@
 # Suits AI — Website
 
-Marketing site + app shell for **Suits AI**, a DaarLabs / DaarForce product.
+Marketing site + app shell for **Suits AI**, a DaarLabs product.
 Legal information & news — *not* legal advice.
 
 ## Pages

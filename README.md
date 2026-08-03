@@ -7,7 +7,7 @@
 Clear, cited answers on immigration, tax, and everyday legal questions —
 in plain English. *Legal information & news, not legal advice.*
 
-A product of **DaarLabs** & **DaarForce**.
+A product of **DaarLabs**.
 
 </div>
 

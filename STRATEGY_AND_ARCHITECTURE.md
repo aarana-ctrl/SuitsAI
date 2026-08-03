@@ -24,7 +24,7 @@ Decisions locked in since v0.1, reflected in the shipped `web/` and `data-pipeli
 - **Accuracy target: ~95%, stressed everywhere.** Every surface states it plainly ("~95% — roughly 1 in 20 answers may be wrong"). No "100%" language anywhere. Honesty is the brand.
 - **Currency:** the corpus is refreshed by **scheduled internet scans** (GitHub Actions / Vercel cron), and every answer is stamped **"accurate as of {date}"** from each chunk's `as_of` field. Re-scan, never re-train.
 - **MVP posture:** **jack of all trades, master of none** — one general pipeline answering basic questions across many categories (immigration, tax, traffic/parking, housing, small claims, employment, consumer, legal news), deepening per-domain over time.
-- **Liability:** comprehensive Privacy Policy + Disclaimer/Terms (`web/privacy.html`, `web/disclaimer.html`) disclaim responsibility for DaarLabs/DaarForce as hard as the law allows (as-is, no warranties, limitation of liability, indemnification). These are strong templates — **have a licensed attorney finalize them before launch.**
+- **Liability:** comprehensive Privacy Policy + Disclaimer/Terms (`web/privacy.html`, `web/disclaimer.html`) disclaim responsibility for DaarLabs as hard as the law allows (as-is, no warranties, limitation of liability, indemnification). These are strong templates — **have a licensed attorney finalize them before launch.**
 
 Everything below (§1–§13) remains the technical/strategic foundation; the items above are the concrete choices layered on top.
 

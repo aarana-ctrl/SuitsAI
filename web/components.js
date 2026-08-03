@@ -64,9 +64,9 @@
         '<p class="foot-disclaimer"><b>Important:</b> Suits AI is an automated information and news service. ' +
         'It does not provide legal advice, does not practice law, and is not a law firm. Using it does not create an attorney–client relationship. ' +
         'Information may be inaccurate, incomplete, or out of date, and targets only ~95% accuracy. Do not rely on it as a substitute for a licensed attorney. ' +
-        'DaarLabs and DaarForce accept no liability for decisions made based on this service.</p>' +
+        'DaarLabs accepts no liability for decisions made based on this service.</p>' +
         '<div class="foot-bottom">' +
-          '<span>© 2026 DaarLabs. A DaarLabs &amp; DaarForce product.</span>' +
+          '<span>© 2026 DaarLabs. A DaarLabs product.</span>' +
           '<span>Not affiliated with the television program “Suits” or its rights holders.</span>' +
         '</div>' +
       '</div></footer>';

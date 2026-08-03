@@ -16,12 +16,32 @@
 
     <div class="hero-beam l"></div>
     <div class="hero-beam r"></div>
-    <svg class="hammer" viewBox="0 0 240 260" aria-hidden="true">
-      <rect x="40" y="60" width="160" height="46" rx="23" fill="currentColor"/>
-      <rect x="70" y="55" width="11" height="56" rx="4" fill="currentColor"/>
-      <rect x="159" y="55" width="11" height="56" rx="4" fill="currentColor"/>
-      <rect x="108" y="104" width="24" height="124" rx="12" fill="currentColor"/>
-      <rect x="66" y="232" width="108" height="22" rx="11" fill="currentColor"/>
+    <svg class="hammer" viewBox="0 0 400 400" aria-hidden="true">
+      <defs>
+        <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#d8b483"/><stop offset=".5" stop-color="#9a6a38"/><stop offset="1" stop-color="#5f3d1e"/>
+        </linearGradient>
+        <linearGradient id="woodTop" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#e9c896"/><stop offset="1" stop-color="#b07f45"/>
+        </linearGradient>
+        <linearGradient id="brass" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#f6e6ac"/><stop offset=".5" stop-color="#cBA23a"/><stop offset="1" stop-color="#8a6512"/>
+        </linearGradient>
+      </defs>
+      <!-- sound block -->
+      <ellipse cx="210" cy="332" rx="94" ry="24" fill="url(#wood)"/>
+      <ellipse cx="210" cy="322" rx="94" ry="22" fill="url(#woodTop)"/>
+      <!-- impact ring -->
+      <circle class="ring" cx="210" cy="316" r="46" fill="none" stroke="#ffffff" stroke-width="4"/>
+      <!-- gavel -->
+      <g class="strike">
+        <line x1="312" y1="132" x2="182" y2="250" stroke="url(#wood)" stroke-width="24" stroke-linecap="round"/>
+        <line x1="312" y1="132" x2="182" y2="250" stroke="#eccf9c" stroke-width="6" stroke-linecap="round" opacity=".5"/>
+        <line x1="128" y1="196" x2="226" y2="300" stroke="url(#wood)" stroke-width="46" stroke-linecap="round"/>
+        <line x1="128" y1="196" x2="226" y2="300" stroke="#eccf9c" stroke-width="11" stroke-linecap="round" opacity=".4"/>
+        <line x1="138" y1="245" x2="176" y2="209" stroke="url(#brass)" stroke-width="9" stroke-linecap="round"/>
+        <line x1="178" y1="287" x2="216" y2="251" stroke="url(#brass)" stroke-width="9" stroke-linecap="round"/>
+      </g>
     </svg>
     <div class="hero-glow"></div>
     <div class="hero-floor"></div>
