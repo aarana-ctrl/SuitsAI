@@ -51,6 +51,12 @@ svg { display:block; }
 }
 .wrap { width:100%; max-width:var(--maxw); margin:0 auto; padding:0 clamp(22px,4vw,80px); }
 
+/* Home = single screen; disclaimer is the last element, frame closes after it */
+.frame.home { min-height:calc(100vh - 24px); display:flex; flex-direction:column; }
+.frame.home .hero { flex:1 1 auto; min-height:0; }
+.frame.home .ribbon { border-bottom:none; }
+@media (max-width:560px){ .frame.home { min-height:calc(100vh - 12px); } }
+
 /* ---------- Typography ---------- */
 h1,h2,h3,.serif { font-family:var(--font-serif); font-weight:400; letter-spacing:.01em; }
 .eyebrow { font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--muted); }
