@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Suits AI — Ask</title>
+<meta name="description" content="Ask Suits AI a legal question. Information & news, not legal advice." />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="ribbon">
+  <strong>Information &amp; news only — not legal advice.</strong> Answers target ~95% accuracy and may be wrong. Verify before acting. No attorney–client relationship is created.
+</div>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">S</span>
+      <span class="brand-name">Suits<span>&nbsp;AI</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="index.html">← Back</a>
+    </div>
+  </div>
+</nav>
+
+<div class="chat-shell">
+  <!-- Sidebar -->
+  <aside class="chat-side">
+    <button class="btn btn-gold side-new" onclick="resetChat()">+ New question</button>
+    <div class="side-h">Recent</div>
+    <div class="side-item" onclick="loadDemo()">Can I day-trade on an F-1 visa?</div>
+    <div class="side-item">Do I file taxes as a resident?</div>
+    <div class="side-item">Is my parking ticket enforceable?</div>
+    <div class="side-h">Categories</div>
+    <div class="side-item">Immigration &amp; Visas</div>
+    <div class="side-item">Taxes</div>
+    <div class="side-item">Traffic &amp; Parking</div>
+    <div class="side-item">Housing &amp; Tenancy</div>
+    <div class="side-item">Small Claims &amp; Civil</div>
+    <div class="side-item">Employment</div>
+  </aside>
+
+  <!-- Main -->
+  <main class="chat-main">
+    <div class="chat-scroll" id="scroll">
+      <div class="wrap" style="max-width:760px;" id="thread">
+        <!-- Intro -->
+        <div class="msg ai">
+          <div class="av">S</div>
+          <div class="body">
+            <p style="font-family:var(--font-serif);font-size:1.15rem;">Good day. I'm Suits AI.</p>
+            <p>Tell me your situation and I'll explain what the law says — with sources. I cover immigration, taxes, traffic, housing, small claims, employment, and general civil questions.</p>
+            <div class="badge-row">
+              <span class="badge">Information &amp; news, not advice</span>
+              <span class="badge">Target accuracy ~95%</span>
+              <span class="badge">Sources cited &amp; dated</span>
+            </div>
+            <p style="font-size:0.85rem;color:var(--muted);">Try the sample below to see how an answer looks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input -->
+    <div class="chat-input-wrap">
+      <div class="wrap" style="max-width:760px;">
+        <div class="chat-input">
+          <textarea id="input" rows="1" placeholder="Describe your situation — e.g. “I'm an F-1 student in my 2nd year, can I open a brokerage and day-trade?”" oninput="autogrow(this)"></textarea>
+          <button class="btn btn-gold" onclick="send()">Ask →</button>
+        </div>
+        <p class="chat-disc">Suits AI can be wrong (~95% target accuracy). It is not a lawyer and does not provide legal advice. Verify anything important before acting. Legal data current as of Aug 2026.</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+function autogrow(el){ el.style.height='auto'; el.style.height=Math.min(el.scrollHeight,140)+'px'; }
+function scrollDown(){ const s=document.getElementById('scroll'); s.scrollTop=s.scrollHeight; }
+
+function addUser(text){
+  const t=document.getElementById('thread');
+  t.insertAdjacentHTML('beforeend',
+    `<div class="msg user"><div class="av">You</div><div class="body"><p>${escapeHtml(text)}</p></div></div>`);
+  scrollDown();
+}
+
+// Demo answer — illustrates format. Real answers come from the RAG backend.
+function addDemoAnswer(){
+  const t=document.getElementById('thread');
+  t.insertAdjacentHTML('beforeend', `
+    <div class="msg ai">
+      <div class="av">S</div>
+      <div class="body">
+        <div class="badge-row">
+          <span class="badge">Confidence: moderate</span>
+          <span class="badge">Accurate as of: Jul 2026</span>
+          <span class="badge warn">Not legal advice — verify before acting</span>
+        </div>
+        <p><strong>Short answer:</strong> Passive personal investing — including buying and selling stocks in your own brokerage account — is generally treated as passive income and is typically permissible for F-1 students. What creates risk is when trading looks like <em>work</em> or a <em>business</em>: doing it as a full-time occupation, day-trading at a volume that resembles self-employment, or trading for others.</p>
+        <p><strong>Why the line matters:</strong> F-1 status restricts <em>employment</em>, not owning assets. Frequent, high-volume day-trading can be argued to be a business activity requiring work authorization, and the facts (frequency, whether it's your primary activity, how the IRS classifies it) decide it. Tax treatment is separate and depends on your residency status.</p>
+        <div class="cite">📄 <strong>8 CFR § 214.2(f)</strong> — Conditions of F-1 status &amp; employment restrictions. <a href="#">View source →</a></div>
+        <div class="cite">📄 <strong>USCIS Policy Manual</strong>, Vol. 2 — Nonimmigrant students. <a href="#">View source →</a></div>
+        <p style="font-size:0.9rem;color:var(--muted);"><strong>This is a fact-specific area.</strong> Because "how much trading becomes a business" is a judgment call with real consequences for your status, confirm your specific situation with an immigration attorney before you begin. This answer is general information, targets ~95% accuracy, and may be incomplete or out of date.</p>
+      </div>
+    </div>`);
+  scrollDown();
+}
+
+function typing(){
+  const t=document.getElementById('thread');
+  t.insertAdjacentHTML('beforeend',
+    `<div class="msg ai" id="typing"><div class="av">S</div><div class="body"><p style="color:var(--muted);">Reading current sources…</p></div></div>`);
+  scrollDown();
+}
+
+function send(){
+  const el=document.getElementById('input');
+  const text=el.value.trim();
+  if(!text) return;
+  addUser(text);
+  el.value=''; autogrow(el);
+  typing();
+  setTimeout(()=>{ document.getElementById('typing')?.remove(); addDemoAnswer(); }, 900);
+}
+function loadDemo(){
+  document.getElementById('input').value="I'm an F-1 student in my 2nd year — can I day-trade stocks?";
+  send();
+}
+function resetChat(){ location.reload(); }
+function escapeHtml(s){ return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+document.getElementById('input').addEventListener('keydown',e=>{
+  if(e.key==='Enter' && !e.shiftKey){ e.preventDefault(); send(); }
+});
+</script>
+</body>
+</html>

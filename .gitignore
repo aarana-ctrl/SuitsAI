@@ -1,0 +1,31 @@
+# === Secrets (NEVER commit) ===
+.env
+.env.*
+*.pem
+*.key
+secrets.*
+
+# === Data pipeline output (regenerable, bulky) ===
+data-pipeline/corpus/
+**/__pycache__/
+*.pyc
+
+# === Python ===
+.venv/
+venv/
+*.egg-info/
+
+# === Node / Next.js (for when you migrate) ===
+node_modules/
+.next/
+dist/
+build/
+
+# === Vercel ===
+.vercel/
+
+# === OS / editor ===
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
