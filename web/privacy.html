@@ -5,27 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Suits AI — Privacy Policy</title>
 <link rel="stylesheet" href="styles.css" />
+<script src="theme.js"></script>
 </head>
 <body>
+<div class="frame">
 
-<div class="ribbon">
-  Suits AI provides <strong>legal information &amp; news</strong> — not legal advice. Targeted accuracy ~95%. Always verify before acting.
-</div>
-
-<nav class="nav">
-  <div class="wrap nav-inner">
-    <a class="brand" href="index.html">
-      <span class="brand-mark">S</span>
-      <span class="brand-name">Suits<span>&nbsp;AI</span></span>
-    </a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="chat.html">Open the app</a>
-      <a href="disclaimer.html">Disclaimer</a>
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-group left">
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="chat.html">Open the app</a>
+      </div>
+      <a class="monogram" href="index.html" aria-label="Suits AI home">
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.1">
+          <path d="M20 2 L35 11 V29 L20 38 L5 29 V11 Z"/>
+          <text x="20" y="26" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="18" fill="currentColor" stroke="none">S</text>
+        </svg>
+      </a>
+      <div class="nav-group right">
+        <a class="link" href="disclaimer.html">Terms</a>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light or dark mode">
+          <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+        </button>
+      </div>
     </div>
-    <div class="nav-cta"><a class="btn btn-ghost" href="index.html">← Back</a></div>
+  </nav>
+
+  <div class="ribbon">
+    Legal <b>information &amp; news</b> — not legal advice. Targeted accuracy ~95%. Always verify before acting.
   </div>
-</nav>
 
 <div class="doc">
   <div class="wrap doc-wrap">
@@ -100,7 +109,7 @@
     <p>The Service is operated from the United States. If you use it from outside the U.S., you consent to processing and storage of your information in the United States and other jurisdictions, which may have different data-protection laws than your own.</p>
 
     <h2>11. Not legal advice; no attorney–client relationship</h2>
-    <p>The Service provides automated legal <em>information and news</em> for general educational purposes only. It is <strong>not legal advice</strong>, is not a substitute for a licensed attorney, and no attorney–client relationship is formed by using it. See our <a href="disclaimer.html" style="color:var(--gold-soft);">Disclaimer &amp; Terms</a> for the full terms governing your use of the Service, including limitations of liability.</p>
+    <p>The Service provides automated legal <em>information and news</em> for general educational purposes only. It is <strong>not legal advice</strong>, is not a substitute for a licensed attorney, and no attorney–client relationship is formed by using it. See our <a href="disclaimer.html">Disclaimer &amp; Terms</a> for the full terms governing your use of the Service, including limitations of liability.</p>
 
     <h2>12. Changes to this Policy</h2>
     <p>We may update this Policy from time to time. Changes are effective when posted, and material changes will be indicated by updating the "Last updated" date. Your continued use of the Service after changes constitutes acceptance.</p>
@@ -118,10 +127,11 @@
   <div class="wrap">
     <div class="foot-bottom">
       <span>© 2026 DaarLabs. All rights reserved.</span>
-      <span><a href="privacy.html" style="color:var(--gold-soft);">Privacy</a> · <a href="disclaimer.html" style="color:var(--gold-soft);">Disclaimer</a></span>
+      <span><a href="privacy.html">Privacy</a> · <a href="disclaimer.html">Disclaimer</a></span>
     </div>
   </div>
 </footer>
 
+</div>
 </body>
 </html>
