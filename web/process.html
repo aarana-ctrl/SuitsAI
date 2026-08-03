@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Suits AI — How It Works</title>
+<meta name="description" content="How Suits AI works: it reads current law, cites its sources, and is honest about its limits." />
+<link rel="stylesheet" href="styles.css" />
+<script src="theme.js"></script>
+</head>
+<body>
+<div class="frame">
+  <div id="site-nav" data-variant="solid"></div>
+  <div class="ribbon">Legal <b>information &amp; news</b> — not legal advice. Targeted accuracy ~95%. Verify before acting.</div>
+
+  <div class="page-head">
+    <button class="back" onclick="history.back()">← Back</button>
+    <div class="wrap">
+      <span class="sec-label">— Process —</span>
+      <h1>Retrieve the law.<br>Cite the source.</h1>
+      <p class="lead">Every answer is grounded in current primary sources, dated, and honest about its own limits.</p>
+    </div>
+  </div>
+
+  <section class="pad workflow">
+    <div class="wrap">
+      <div class="flow-line"></div>
+      <div class="flow">
+        <div class="flow-step"><span class="dot"></span><h3>Your situation</h3><p>Describe your case — visa type, your state, the notice you received. The more context, the sharper the answer.</p></div>
+        <div class="flow-step"><span class="dot"></span><h3>Current law</h3><p>It searches statutes, regulations, and case law, refreshed on a regular internet-scan schedule.</p></div>
+        <div class="flow-step"><span class="dot"></span><h3>Cited answer</h3><p>Plain English, with links to the sources, a confidence signal, and an “accurate as of” date.</p></div>
+        <div class="flow-step"><span class="dot"></span><h3>Honest limits</h3><p>When stakes are high or the answer is uncertain, it says so and points you to a licensed attorney.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad">
+    <div class="wrap" style="max-width:820px;text-align:center;">
+      <span class="sec-label">— Under the hood —</span>
+      <h2 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:300;margin-bottom:16px;">Grounded, not guessed.</h2>
+      <p class="lead">Suits AI doesn’t answer from memory. It retrieves the actual text of the law at query time (retrieval-augmented generation), so answers stay current as the corpus is re-scanned — and every claim can be traced back to a source you can open yourself.</p>
+      <div style="margin-top:40px;"><a class="btn" href="chat.html">Try it <span class="arw">&#8599;</span></a></div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+</div>
+<script src="components.js"></script>
+</body>
+</html>
