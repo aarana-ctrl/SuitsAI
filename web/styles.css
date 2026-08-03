@@ -51,11 +51,6 @@ svg { display:block; }
 }
 .wrap { width:100%; max-width:var(--maxw); margin:0 auto; padding:0 clamp(22px,4vw,80px); }
 
-/* Home = single screen; disclaimer is the last element, frame closes after it */
-.frame.home { min-height:calc(100vh - 24px); display:flex; flex-direction:column; }
-.frame.home .hero { flex:1 1 auto; min-height:0; }
-.frame.home .ribbon { border-bottom:none; }
-@media (max-width:560px){ .frame.home { min-height:calc(100vh - 12px); } }
 
 /* ---------- Typography ---------- */
 h1,h2,h3,.serif { font-family:var(--font-serif); font-weight:400; letter-spacing:.01em; }
@@ -150,9 +145,9 @@ h1,h2,h3,.serif { font-family:var(--font-serif); font-weight:400; letter-spacing
 .hero-content::before { content:""; position:absolute; z-index:-1; left:50%; top:50%; transform:translate(-50%,-50%); width:140%; height:150%; background:radial-gradient(ellipse at center, rgba(5,5,6,.62), rgba(5,5,6,.28) 45%, transparent 72%); pointer-events:none; }
 .hero-content .kicker { font-family:var(--font-serif); font-style:italic; font-size:clamp(1.15rem,1.9vw,1.7rem); color:#c9c9d1; }
 .hero-content h1 { font-size:clamp(3rem,10vw,9rem); line-height:.96; font-weight:400; letter-spacing:.02em; text-transform:uppercase; color:#fff; margin:8px 0 34px; text-shadow:0 2px 40px rgba(0,0,0,.55); }
-.side-label { position:absolute; left:clamp(16px,2.5vw,40px); top:32%; z-index:6; display:flex; flex-direction:column; align-items:center; gap:12px; color:rgba(255,255,255,.5); font-size:.7rem; letter-spacing:.18em; }
-.side-label .txt { writing-mode:vertical-rl; text-transform:uppercase; }
-.side-label .dots { width:1px; height:60px; background:repeating-linear-gradient(to bottom,rgba(255,255,255,.5) 0 3px,transparent 3px 8px); }
+.side-label { position:absolute; left:clamp(18px,2.6vw,44px); top:24%; z-index:6; display:flex; flex-direction:column; align-items:center; gap:18px; color:rgba(255,255,255,.85); font-size:1rem; letter-spacing:.3em; }
+.side-label .txt { writing-mode:vertical-rl; text-transform:uppercase; font-weight:400; }
+.side-label .dots { width:1px; height:150px; background:repeating-linear-gradient(to bottom,rgba(255,255,255,.75) 0 3px,transparent 3px 9px); }
 .scroll-cue { position:absolute; left:clamp(16px,2.5vw,40px); bottom:28px; z-index:6; color:rgba(255,255,255,.65); font-size:20px; animation:bob 2.4s ease-in-out infinite; }
 @keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
 .signature { position:absolute; right:clamp(20px,3vw,48px); bottom:24px; z-index:6; font-family:var(--font-script); font-size:clamp(1.8rem,3vw,2.8rem); color:rgba(255,255,255,.82); line-height:1; }
